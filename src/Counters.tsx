@@ -6,6 +6,7 @@ interface stateTypeCheck {
   name: string;
 }
 
+//this class is having no props
 class Counters extends Component<{}, stateTypeCheck> {
   state = {
     counters: [
@@ -14,7 +15,7 @@ class Counters extends Component<{}, stateTypeCheck> {
     ],
     name: ""
   };
-
+  //see how we pass the parameters in function
   addHandler = (id: number): void => {
     let temporary = this.state.counters;
     let temp = this.state.counters.findIndex(n => n.id === id);
@@ -22,6 +23,7 @@ class Counters extends Component<{}, stateTypeCheck> {
 
     this.setState({ counters: temporary });
   };
+  //see how we provide the type of event listeners
   clicked = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     this.setState({ name: e.currentTarget.value });

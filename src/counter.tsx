@@ -2,8 +2,10 @@ import React, { Component } from "react";
 
 interface propTypeCheck {
   values: number;
-  addHandler: () => void;
+  addHandler: () => void; //see how we passed the return type of function
 }
+
+//functional component with typescript
 const Counters: React.FC<propTypeCheck> = props => {
   return (
     <div>
