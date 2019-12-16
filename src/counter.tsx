@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 
-class Counters extends Component<{
+interface propTypeCheck {
   values: number;
   addHandler: () => void;
-}> {
-  render() {
-    return (
-      <div>
-        value={this.props.values}
-        <button onClick={this.props.addHandler}>add</button>
-      </div>
-    );
-  }
 }
+const Counters: React.FC<propTypeCheck> = props => {
+  return (
+    <div>
+      value={props.values}
+      <button onClick={props.addHandler}>add</button>
+    </div>
+  );
+};
 
 export default Counters;
